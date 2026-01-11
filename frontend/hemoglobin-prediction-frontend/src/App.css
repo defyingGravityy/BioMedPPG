@@ -1,0 +1,365 @@
+.app {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 3vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.app-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.app-header h1 {
+  margin: 0 0 0.25rem 0;
+  font-size: clamp(1.75rem, 3vw, 2.3rem);
+}
+
+.app-header p {
+  margin: 0;
+  color: #4b5563;
+}
+
+.connection-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  background-color: #f3f4f6;
+  color: #4b5563;
+}
+
+.connection-indicator .dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background-color: currentColor;
+}
+
+.connection-indicator.online {
+  background-color: #d1fae5;
+  color: #047857;
+}
+
+.connection-indicator.offline {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.app-layout {
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  grid-template-columns: minmax(280px, 360px) minmax(0, 1fr);
+}
+
+.panel {
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px -24px rgba(15, 23, 42, 0.45);
+  padding: clamp(1.25rem, 2vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.panel h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.session-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.field-group label {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.field-group input,
+.field-group select {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  font-size: 1rem;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.field-group input:focus,
+.field-group select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  outline: none;
+}
+
+.field-row {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.checkbox-group {
+  justify-content: space-between;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+}
+
+.checkbox-wrapper input {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  border-radius: 999px;
+  border: none;
+  padding: 0.65rem 1.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease, opacity 150ms ease;
+}
+
+.actions button.primary {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  box-shadow: 0 10px 30px -15px rgba(37, 99, 235, 0.6);
+}
+
+.actions button.secondary {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.form-error {
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  background-color: #fee2e2;
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.panel-status {
+  gap: 1.25rem;
+}
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.status-header p {
+  margin: 0.5rem 0 0 0;
+  color: #374151;
+}
+
+.status-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-meta code {
+  font-size: 0.9rem;
+  background-color: #f9fafb;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+}
+
+.status-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.status-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem;
+  background-color: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.status-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.stat-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.stat-line strong {
+  font-weight: 700;
+  color: #111827;
+}
+
+.readings-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.readings-list li {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  padding: 0.35rem 0.55rem;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
+
+.placeholder {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.summary-block {
+  margin: 0;
+  padding: 1rem;
+  background-color: #111827;
+  color: #f9fafb;
+  border-radius: 12px;
+  max-height: 240px;
+  overflow: auto;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.summary-block code {
+  white-space: pre-wrap;
+}
+
+.stats-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  font-size: 0.9rem;
+}
+
+.stats-grid span {
+  color: #6b7280;
+}
+
+.stats-grid strong {
+  display: block;
+  margin-top: 0.25rem;
+  color: #111827;
+}
+
+.downloads .download-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.download-button {
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  background-color: #1d4ed8;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.download-button[aria-disabled='true'] {
+  pointer-events: none;
+  opacity: 0.45;
+  background-color: #9ca3af;
+}
+
+.download-button:not([aria-disabled='true']):hover {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 980px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .status-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .status-meta {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .actions button {
+    flex: 1;
+  }
+}
